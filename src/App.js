@@ -1,18 +1,83 @@
 import React from "react";
-import View from "./View";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+   html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, menu, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  main, menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, main, menu, nav, section {
+    display: block;
+  }
+  /* HTML5 hidden-attribute fix for newer browsers */
+  *[hidden] {
+      display: none;
+  }
+  body {
+    line-height: 1;
+  }
+  menu, ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+`;
+
+const Container = styled.div`
+  
+`;
+
+const Section = styled.div`
+  width: 100%;
+  height: 100vh;
+  color: #E8E5E2;
+`;
+
+const H1 = styled.h1`
+  font-family: 'Quicksand', sans-serif;
+  font-size: 72px;
+  color: #333333;
+`;
 
 const App = () => {
-  return ( 
-    <div onContextMenu={
-      (e) => {
-        e.preventDefault();
-      }
-    }>
-      <div className="App">
-        <View />
-      </div>
-    </div>
-  );
+  return <>
+    <GlobalStyle>
+      <Section>
+        <H1>About</H1>
+      </Section>
+    </GlobalStyle>
+  </>
 }
 
 export default App;
